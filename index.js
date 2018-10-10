@@ -2,7 +2,7 @@ process.on('unhandledRejection', console.dir);
 
 const watson = require('watson-developer-cloud');
 const admin = require('firebase-admin');
-const serviceAccount = require('./cert/can-i-granma-firebase-adminsdk-8cnv6-af9c27b17a.json');
+const serviceAccount = require('/app/cert/can-i-granma-firebase-adminsdk-8cnv6-af9c27b17a.json');
 const express = require('express');
 const request = require('request');
 const line = require('@line/bot-sdk');
@@ -63,7 +63,7 @@ async function handleEvent(event) {
   let magicword = "";
   let workspaceId;
   let usersdb;
-  await ref_user.onse('value', async function(snapshot) {
+  await ref_user.onse("value", async function(snapshot) {
     usersdb = snapshot.child(lineid).val();
   });
 
@@ -80,7 +80,7 @@ async function handleEvent(event) {
   } else {
     magicword = usersdb;
     let intent;
-    await ref_mw.onse('value',async function(ss) {
+    await ref_mw.onse("value",async function(ss) {
       workspaceId = ss.child(magicword).val().workspace_id;
       intent = ss.child(magicword).val().intent;
     });
@@ -165,7 +165,7 @@ async function addreq(body) {
 	});
 
 	let lineid;
-	await ref_mw.onse('value', async function(snapshot) {
+	await ref_mw.onse("value", async function(snapshot) {
 		lineid = snapshot.child(magicword).val().mago_id;
 		//push通知をする
 		const message = {
