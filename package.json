@@ -1,0 +1,22 @@
+{
+  "name": "mago",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^6.3.0",
+    "body-parser": "^1.18.3",
+    "date-utils": "^1.2.21",
+    "express": "^4.16.3",
+    "firebase-admin": "^6.0.0",
+    "now": "^11.4.6",
+    "request-promise": "^4.2.2",
+    "watson-developer-cloud": "^3.11.1"
+  }
+}
