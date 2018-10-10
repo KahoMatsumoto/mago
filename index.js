@@ -31,8 +31,8 @@ admin.initializeApp( {
 		databaseURL: 'https://can-i-granma.firebaseio.com'
 });
 const db = admin.database();
-const ref_mw = db.ref('magic_words');
-const ref_user = db.ref('line_ids_mago');
+let ref_mw = db.ref('magic_words');
+let ref_user = db.ref('line_ids_mago');
 
 // line設定
 const config = {
