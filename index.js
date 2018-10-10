@@ -75,7 +75,7 @@ async function handleEvent(event) {
     });
     return client.replyMessage(event.replyToken, {
       type:'text',
-      text: `合言葉は${userjson[index].magic_word}だね．用があったら連絡するよ．`
+      text: `合言葉は${magic_word}だね．用があったら連絡するよ．`
     });
   } else {
     magicword = usersdb;
