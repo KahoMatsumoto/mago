@@ -134,6 +134,7 @@ async function handleEvent(event) {
             workspace_id: workspaceId,
             dialog_node: formatted,
             conditions:`#${formatted}`,
+            context:{type:"q"},
             output: {
               text: answer
             },
