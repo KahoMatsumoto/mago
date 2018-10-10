@@ -9,6 +9,8 @@ const line = require('@line/bot-sdk');
 const rpromise = require('request-promise');
 const fs = require('fs');
 const bparser = require('body-parser');
+const rp = require('request-promise');
+
 require('date-utils');
 
 const PORT = process.env.PORT || 3000;
