@@ -2,7 +2,7 @@ process.on('unhandledRejection', console.dir);
 
 const watson = require('watson-developer-cloud');
 const admin = require('firebase-admin');
-const serviceAccount = require('/app/cert/can-i-granma-firebase-adminsdk-8cnv6-af9c27b17a.json');
+const serviceAccount = require('./cert/can-i-granma-firebase-adminsdk-8cnv6-af9c27b17a.json');
 const express = require('express');
 const request = require('request');
 const line = require('@line/bot-sdk');
