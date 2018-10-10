@@ -54,6 +54,7 @@ app.post('/webhook', line.middleware(config), (req,res) => {
 
 app.post('/addreq', async function(req, res) {
 	await addreq(req.body);
+  res.send('ok');
 });
 
 
