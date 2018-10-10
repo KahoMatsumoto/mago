@@ -63,7 +63,7 @@ async function handleEvent(event) {
   let magicword = "";
   let workspaceId;
   let usersdb;
-  await ref_user.onse("value", async function(snapshot) {
+  await ref_user.once("value", async function(snapshot) {
     usersdb = snapshot.child(lineid).val();
   });
 
@@ -80,7 +80,7 @@ async function handleEvent(event) {
   } else {
     magicword = usersdb;
     let intent;
-    await ref_mw.onse("value",async function(ss) {
+    await ref_mw.once("value",async function(ss) {
       workspaceId = ss.child(magicword).val().workspace_id;
       intent = ss.child(magicword).val().intent;
     });
@@ -165,7 +165,7 @@ async function addreq(body) {
 	});
 
 	let lineid;
-	await ref_mw.onse("value", async function(snapshot) {
+	await ref_mw.once("value", async function(snapshot) {
 		lineid = snapshot.child(magicword).val().mago_id;
 		//push通知をする
 		const message = {
