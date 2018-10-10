@@ -143,6 +143,23 @@ async function handleEvent(event) {
             } else {
               console.log(JSON.stringify(response, null, 2));
 
+              const options = {
+          			method: 'POST',
+          			uri: 'https://grrrnma.herokuapp.com/answer',
+          			headers: {
+          				'Content-Type':'application/json'
+          			},
+          			json: {
+          				magic_word: magicword,
+          				intent : intent,
+                  answer : answer
+          			}
+          		}
+          		rp(options)
+          			.then(function(body){
+          				console.log('リクエストしました');
+          		});
+
               return client.replyMessage(event.replyToken, {
                 type:'text',
                 text:'今度きかれたらそう言うね'
