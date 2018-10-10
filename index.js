@@ -112,9 +112,12 @@ async function handleEvent(event) {
         }
       });
     } else {
+      const dt = new Date();
+      const formatted = dt.toFormat('YYMMDDHHMISS');
+
       params = {
         workspace_id: workspaceId,
-        intent: intent,
+        intent: formatted,
         examples: [{
           text: intent
         }]
@@ -127,16 +130,14 @@ async function handleEvent(event) {
           console.error("watsonのエラー！！！"+err);
         } else {
           console.log(JSON.stringify(res, null, 2));
-          const dt = new Date();
-          const formatted = dt.toFormat('YYMMDDHHMISS');
           params = {
             workspace_id: workspaceId,
             dialog_node: formatted,
-            conditions:`#${intent}`,
+            conditions:`#${formatted}`,
             output: {
               text: answer
             },
-            title: intent
+            title: formatted
           };
 
           await assistant.createDialogNode(params, function(error, response) {
