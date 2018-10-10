@@ -40,6 +40,7 @@ const config = {
 	channelSecret: 'c846bb734fd1bbde3da1ec90cc3b9943'
 };
 
+const client = new line.Client(config);
 app.post('/webhook', line.middleware(config), (req,res) => {
 	console.log(req.body.events);
 
@@ -48,7 +49,6 @@ app.post('/webhook', line.middleware(config), (req,res) => {
 		.then((result) => res.json(result));
 });
 
-const client = new line.Client(config);
 
 app.post('/addreq', async function(req, res) {
 	await addreq(req.body);
